@@ -1,5 +1,5 @@
 ARG BCI_IMAGE=registry.suse.com/bci/bci-base
-ARG GO_IMAGE=rancher/hardened-build-base:v1.24.4b1
+ARG GO_IMAGE=rancher/hardened-build-base:v1.24.5b1
 
 # Build the project
 FROM ${GO_IMAGE} as builder
@@ -7,7 +7,7 @@ RUN set -x && \
     apk --no-cache add \
     git \
     make
-ARG TAG=v1.2.1
+ARG TAG=v1.3.0
 RUN git clone --depth=1 https://github.com/k8snetworkplumbingwg/ib-sriov-cni
 WORKDIR ib-sriov-cni
 RUN git fetch --all --tags --prune
